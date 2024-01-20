@@ -1,0 +1,51 @@
+There is a problem in using plain vanilla css. Vanilla css may result in
+clashes if two different css files contain a class having same name. 
+
+Example:
+
+ListGroup.css:
+
+.list-group{
+    list-style: none;
+    padding: 0;
+}
+
+App.css:
+
+.list-group{
+  background-color: red;
+}
+
+These 2 classes hacing the same name will have a clash at the runtime even 
+thought they are in different files this is the problem in using vaniall css.
+
+To avoid clashes betwenn we use css module.
+
+In order to conver a css file to a css moulde file you need to add 'module' in the file
+name.
+
+ListGroup.css => ListGroup.module.css
+
+A css module is a css file in which all class names are scoped locally.
+
+import style from "./ListGroup.module.css";
+
+The style object contains all the classes you define inside of it as properties.
+className={styles["list-group"]}
+
+As part of bundling our application vite takes all the css modules and creates
+unique css classes so we never have to very about name clashes anymore. 
+
+Using multiple classes through css modules
+<ul className={[styles["list-group"], styles.container].join(" ")}>
+
+Inline css
+<ul className="list-group" style={{ backgroundColor: 'yellow'}}></ul>
+
+All the HTML elemnts have a style property which we cans et to an object.
+We can also create that object outside of the markup.
+
+import { BsFillCalendarFill } from "react-icons/bs"; // BsFillCalendarFill it is essentially a react component.
+//react-icons/bs bs means the library we need to import the icon from (first 2 letters of the icon name.)
+
+        <BsFillCalendarFill color="red" size="40"></BsFillCalendarFill>

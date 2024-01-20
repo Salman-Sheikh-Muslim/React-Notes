@@ -1,0 +1,163 @@
+Typescript is a superset of JavaScript; it adds static typing to the language
+essentially it helps us catch errors earlier in the development process which
+can save us time and headches down the road.
+
+React is a JS library for building dynamic and interactive UIs.
+
+When a web page loads in the browser the browser takes the html code and creates
+a tree like structure called the DOM.
+
+Components help us write reusable, modular, and better organized code.
+
+A react application is a tree of components with the app being the root and bring
+in everthing together.
+
+
+Install Prettier. Go to file than prefrences than settings. Search for 'format on save'
+check the box.
+
+//------------------------------------------
+
+'node_modules' is the folder in which all the third-party tools and libraries
+are installed like React. WE DO NOT TOUCH THIS FOLDER.
+
+In 'public' folder the public assests of our website exsist like images, video files
+and so on.
+
+The 'src' folder contains the source code for our application. When a react app is
+installed by default it contains a single component known as react.
+
+'index.html' contains a div with id of 'root' and that is the container of our
+application.
+Below that we have a script tag refrencing 'src="/src/main.tsx"' this is the 
+entry point for our application.
+
+In 'package.json' you can find information about the project. It includes
+information suc as name of the project, its version, the scripts, the dependencies,
+the devDependencies etc.
+
+The development dependencies are only used for development and are not used/deployed
+when our application has been deployed or is being deployed.
+
+We have a typescript configuration (tsconfig.json) file. It has a bunch of settings 
+for telling the typescript compiler how to compile our code to JavaScript. 
+For the most part you never have to touch this file unless you are a advance user.
+
+We also have a configuration file (vite.config.ts). For the most part you do not
+have to touch this file.
+
+JSX allows us to easily create dynmic content.
+
+A expression is a piece of code that produces a value.
+
+In {} curly brackets we can write any piece of code that returns a value.
+
+
+Component tree:
+
+App (Parent) > Message (child)
+
+Virtual DOM
+
+div (Parent) > h1 (child)
+
+When our application starts React takes the component tree and builds a JavaScript
+data structure calledd the Virtual DOM.
+This Virtual DOM is different from the actual DOM in the browser. Its a 
+light-weight in-memory representation of our component tree where each node
+represents a component and its properties.
+
+When the state or data of a component changes React updates the crosponding node
+in the Virtual DOM to reflect the new state. Than it compares the current
+version of the Virtual  DOM  with the previous version to identify the nodes 
+that should be updated in the Actual DOM. Than it updates the nodes in the
+Actual DOM.
+
+Technically updating thr DOM is not done by React itself its done by a companion
+library called 'React DOM'.
+
+StrictMode is a built-in component in React and it does not have a visual
+representation. Its purpose is to identify potential problems.
+
+React alone is not enough to build modern applications as it just deals with the UI.
+We often need additional tools for other concerns such as:
+
+    Routing
+    HTTP
+    Managing App state
+    Internationalization
+    Form Validation
+    Animation
+    etc
+
+In React a component cannot return more than 1 element; unless all of the elements
+are wrapped in a single element.The best way to achieve this is by uisng angle
+bracket <></>. Empty <> angle brackets tell React to use a Fragment to wrap all 
+the children (other elements).
+
+
+In JSX/JSX expression we do not have a for loop.
+
+In a JSX expression we can only use html elements, React Components and curly brackets {}.
+
+
+ {items.length === 0 && <p>No Item Found</p>} 
+ In a Expression using AND if the first value is true and the second value is truthy 
+ the result is thr truthy value.
+ If the first value is false than the result id false.
+
+ In React each element has a property called 'onClick'.
+
+ SyntheticBaseEvent is a built-in class in React because Different browsers have different implementation of 
+ event objects so to make this cross-browser React team have created a class called
+ SyntheticBaseEvent which is a wrapped around the native browser event object.
+
+ Each component in REACT has its own state meaning if the same component
+ is called or displayed or used 2 times such as
+       <ListGroupUseState></ListGroupUseState>
+       <ListGroupUseState></ListGroupUseState>
+than both of the components will have their own componentState which will be
+independent form each other.
+
+To make components reusable we use 'props' or 'properties'. Props are inputs
+to our components.
+
+Adding properties value when calling the component.
+function App() {
+  let items = ["Rawalpindi", "Islamabad", "Kashmir", "Lahore", "Karachi"];
+  return (
+      <ListGroupUseState></ListGroupUseState> */}
+      <ReusableListGroup items={items} heading="Cities"></ReusableListGroup>
+    </div>
+  );
+}
+
+There is a special prop called 'children' and all components support it.
+
+ReactNode is a class defined in React Module that allows us to pass elments as children
+within a component.
+children : ReactNode;
+
+
+color?: string; //? means property is optional
+
+ color?: "primary" | "secondary"; //? means property is optional
+  //using string literals with (|) union operator to define values that can be accepted.
+
+
+  Creating a property having a function in interface in a child component helps
+  in notifying the parent component that something is selected or clicked etc.
+
+  interface Props {
+  items: string[]; //Using type anotation to identify the type of properties.
+  heading: string;
+  //(item: string) => void
+  onSelectItem: (item: string) => void; //look at ReusableListGroup.tsx
+}
+
+Assiging default valus to properties
+const ButtonAnother = ({ children, onClick, color = "primary" }: Props)
+
+import ListGroup from "./components/ListGroup"; //When we only provide the folder 
+and not the file name than the compiler looks for a file named 'index'.
+

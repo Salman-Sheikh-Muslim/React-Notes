@@ -1,0 +1,50 @@
+Check your node version: node -v //It should be 16th version minimum.
+
+There are 2 ways to create a React app:
+
+    -Create React App (CRA)
+    -Vite
+
+    Command: npm create vite@latest
+    Command: npm create vite@4.1.0
+
+        Type Project Name:
+        Select framework: React
+        Select Language : typescript
+
+    cd folder-path
+    npm install //installs all the third party libraries
+    code . //to open the project in vscode.
+
+Press Ctril+` (backtick) to open the embedded terminal in vscode.
+
+Type 'npm run dev' to run the web-server. //Opens the project on local host
+Using Vite we can create any kind of JS project.
+
+hmr - Hot Module Replacement
+Vite under the hood monitors the files for changes. Whenever we make any changes,
+it will automatically refresh the page in the browser.
+
+Installing Bootstrap: npm i bootstrap@5.3.2 //in the react project folder
+
+import bootstrap in main.tsx
+import 'bootstrap/dist/css/bootstrap.css'
+
+To use CSS-IN-JS with styled components library:
+npm install styled-components
+
+T install type definations for this library (so that the Typescript compiler knows
+what type of object are defined in this library)
+npm install @types/styled-components
+
+@types is a repository that contains type definations for various Popular
+JavaScript libraries.
+
+To use icons install library
+npm install react-icons@4.7.1
+
+react-icons is essentially a package of different icon libraries.
+
+google: 'reat icons' you will find a website.
+
+Pick a icon you like and copy itsname

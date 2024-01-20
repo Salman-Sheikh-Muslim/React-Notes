@@ -1,0 +1,12 @@
+To create a new react component you add a new file into the 'src' flder.
+
+The extension of that fil can be ts or tsx.
+Quite often ts is used for plain typescript files and tsx for React components.
+
+There are 2 ways to create a react component by using a JavaScript class or a function.
+
+Function based components are more popular because they are easier to right and more
+concise.
+
+When creating function components in React use PascalCasing. This is expected by developers
+and required by React.

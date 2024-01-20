@@ -1,0 +1,43 @@
+Certainly, let me explain each bullet point:
+
+**PROPS OR PROPERTIES**
+
+1. **Input passed to a component:** Props, short for properties, are a mechanism 
+in React for passing information from a parent component to a child component. 
+They allow you to customize and configure child components based on the data or 
+configuration provided by the parent.
+
+2. **Similar to function args:** In a way, props are similar to arguments in a 
+function. When you call a function in JavaScript and pass arguments, those 
+arguments are used within the function to perform specific actions. Similarly, 
+props provide a way to pass data from one component to another in React.
+
+3. **Immutable:** Props are immutable, meaning their values cannot be changed once 
+set by the parent component. This immutability ensures that child components do not 
+accidentally modify the data received from their parent components, helping to 
+maintain a clear data flow.
+
+4. **Cause a re-render when they change:** When the values of props change, React 
+automatically triggers a re-render of the component receiving those props. This is 
+because React components are designed to update and reflect changes in their props 
+or state by rendering the updated information to the DOM.
+
+**STATE**
+
+1. **Data managed by a component:** Unlike props, which are passed down from parent 
+components, state is internal data managed by a component. It allows a component to 
+keep track of information that may change over time, such as user interactions, form 
+input, or any dynamic data specific to that component.
+
+2. **Similar to local variables:** State can be thought of as local variables that 
+belong to a specific component. These variables can be read, modified, and used 
+within the component to control its behavior and appearance.
+
+3. **Mutable:** Unlike props, the values of state can be changed. Components can 
+update their own state, triggering a re-render and allowing for dynamic user 
+interfaces that respond to user input or other events.
+
+4. **Cause a re-render when they are updated:** Similar to props, when the state of 
+a component is updated, React automatically re-renders the component. This ensures 
+that the user interface stays in sync with the underlying data and reflects any 
+changes made to the component's state.

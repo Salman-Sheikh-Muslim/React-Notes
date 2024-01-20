@@ -1,0 +1,45 @@
+CSS-in-JS is an approach to styling web applications where styles are written 
+directly within JavaScript or TypeScript files. This allows developers to manage 
+styles and component logic in a more cohesive manner. Let's delve into the specific 
+points you've mentioned:
+
+1. **Scoped Styles:**
+   - In CSS-in-JS, styles are typically scoped to the component they are associated 
+   with. This means that the styles defined for a particular component do not leak or 
+   affect other components in the application. This is achieved by generating unique 
+   class names or using other mechanisms to ensure isolation.
+
+2. **All the CSS & JS/TS Code in One Place:**
+   - CSS-in-JS consolidates both the styling and logic of a component into a single 
+   file, often within the same JavaScript or TypeScript module. This makes it easier 
+   for developers to understand, manage, and maintain code, as everything related to 
+   a specific component is contained in one location.
+
+3. **Easier to Delete a Component:**
+   - Since the styles are directly associated with the component they are styling, 
+   deleting a component becomes simpler. Developers can remove the entire module 
+   containing the component's code and styles, ensuring that there are no lingering 
+   or unused styles left in the application.
+
+4. **Easier to Style Based on Props/State:**
+   - With CSS-in-JS, styles can be dynamically generated based on the props or state 
+   of a component. This allows for more dynamic and responsive styling, as the styles 
+   can adapt based on the changing state or properties of the component. This can 
+   lead to more modular and reusable styling logic.
+
+In summary, CSS-in-JS provides a more cohesive and encapsulated approach to styling 
+in web development. It brings the styling and logic closer together, making it easier 
+to manage, delete, and style components based on dynamic factors such as props or 
+state. It also addresses the challenge of scoped styles, ensuring that styles are 
+isolated to the components they are intended for, preventing global styling conflicts.
+
+Popular Libraries:
+
+Styled Components
+Emorion
+Polished
+
+
+For live look at path:
+D:\VS Code\React-Notes\react-style\src\components\ccs-in-js-listgroup
+

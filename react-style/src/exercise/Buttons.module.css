@@ -1,0 +1,24 @@
+/* .btn-styling {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    font-size: larger;
+  }
+  
+  .btn-styling:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #004080;
+  }
+   */
+
+   .btn {
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: 0;
+    }
+    .btn-primary {
+    background-color: #0d6efd;
+    color: white;
+    }
