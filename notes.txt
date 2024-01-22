@@ -161,3 +161,122 @@ const ButtonAnother = ({ children, onClick, color = "primary" }: Props)
 import ListGroup from "./components/ListGroup"; //When we only provide the folder 
 and not the file name than the compiler looks for a file named 'index'.
 
+We pass component tree to ReactDOM in main.tsx for rendering inside the browser.
+
+StrictMode component is a builtin component of React and it does not have a 
+visual representation; its only there to catch potential problems.
+One of these potential problems is impure components. So when the StrictMode is
+enabled in development React renders each component twice. 
+
+Messages coming from the StrictMode are greyed out in the console. In React18 StrictMode
+is turned on by default and as a result React renders each component twice. StrictMode
+helps us find ImpureComponents (as we do not see the result we expect).
+
+It only behaves this way in development mode, so when we built our 
+application for production the StrictMode checks are not included and our
+components will render only once.
+
+
+Things to focus on will updated a complex state object:
+
+// The ... (spread operator) in JS is shallow meaning when we copy the object customer
+with it '...customer' the object definded within it (address object) its address
+in-memory wil be copied. Meaning both address object will refrence the same
+location in memory.
+
+  const handleClick = () => {
+    setCustomer({ ...customer,}); 
+  };
+
+When updating state in React applications we should make sure that our new state
+object is completely independent of the exsisting state object. They do not
+share anything.
+
+In order to make address onject completly independent fron the customer address
+object we nned to do the following:
+    
+ 
+  const handleClick = () => {
+    setCustomer({
+      ...customer, address: { ...customer.address, zipCode: 94112 }, });
+  };
+
+  //  setCustomer({...customer, address: { ...customer.address, zipCode: 94112 }, });
+  First of all the customer object is copied with the help of 
+  spread operator '...customer' and the memory address is copied for the object address
+  defined inside of the customer object. 
+
+  Next we set the address property to a new object by defing it 
+  'address: { ...customer.address, zipCode: 94112 }'. 
+
+  First we copy the exsiting address object using the spread operator
+  '...customer.address' this copies all the properties insdie the address object
+  including their values.
+
+  Finally we update the zipcode property of the address object to a new value
+  'zipCode: 94112'.
+
+  file: react-managing-component-state\src\components\Updating-useState-Nested-Objects.tsx
+
+*/
+
+
+To update an object in an array we use the map method.
+
+
+_____________
+
+function UpdatingUseStateArrayOfObjects() {
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
+  /*
+"When dealing with state objects and arrays in React, you should remember to treat 
+them as immutable or read-only."
+  */
+
+  const handleClick = () => {
+    const mappedBugs = setBugs(
+      bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug))
+      /*
+      By using the map method we are creating a new array and updating property 
+      fixed to 'true' where id is 1. By doing this we are only copying the object 
+      where id is 1 and then modifying the fixed property. As for the other objects 
+      in the array their address in memory is copied. So the other objects are 
+      refering to the same location/address as the orignal array.
+
+      You do not always have to create a brand new object for every object. Only
+      create brand new object for the objects that need to be modified.
+
+      react-managing-component-state\src\components\Updating-useState-Array-Of-Objects.tsx
+
+    */
+
+    _____________
+
+Uodating useState Array and object when treating thema as Immutatable becomes
+a liitle bit tough and complex to solve this and treat them as a regular
+JavaScript Object and  Array we can use the 'immer' library.
+
+npm install immer@9.0.19
+
+file:  react-managing-component-state/src/components/Mutable-Updating-useState-Array-Of-Objects.tsx
+
+_____________
+
+As a rule of thumb remember that the component that holds the state is the One
+responsible for updating it.
+
+
+________
+
+To share state between 2 components have a same parent component between them.
+Declare props in both child componets. The parent componet will assign values to 
+the props. The parent componet will have the state variable defined which will
+be shared between the child componets as it will be passed as argument to A
+prop for each child component.
+
+react-managing-component-state/src/components/NavBar-SharingState.tsx
+react-managing-component-state/src/components/Cart-SharingState.tsx
+D:\VS Code\React-Notes\react-managing-component-state\src\App.tsx

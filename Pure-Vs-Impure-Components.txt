@@ -1,0 +1,63 @@
+What is Purity?
+
+In computer science a function when given the same input, always returns the
+same result is known as a Pure Function.
+
+Pure Function
+function sum(a + b){
+
+    return a + b; //always returns the same reult on same input
+}
+
+Impure Function:
+function generateRandomNumber(maximumValue) {
+  // Ensure that the parameter is a positive number
+  if (typeof maximumValue !== 'number' || maximumValue <= 0) {
+    throw new Error('Invalid input. Please provide a positive number.');
+  }
+
+  // Generate a random number between 0 (inclusive) and the specified maximum value (exclusive)
+  const randomNumber = Math.random() * maximumValue; //does not return the same reult on same input
+
+  // Return the random number
+  return randomNumber;
+}
+
+________
+
+Now React is desgined around this concept. It expects every component we create to
+be a pure function.
+
+So if we give it the same inputs (props) it should always return thr same JSX and
+this is for performance resons. So if the inputs of the components have not changed
+React can skip 're-rendering' that component.
+
+
+To keep components pure we should keep any kind of changes out of the render phase.
+We should not change any object that exsisted before rendering. But note that its 
+totally fine to updat any variable or object that we created as part of rendering.
+
+
+/* Each ImpureComponents is rendered twice due to StrictMode as well as other
+      components.
+      
+      Reach renders each ImpureComponents twice and takes the result of the
+      second render
+      
+            <ImpureComponents /> Message 1 // The first render is primarily ussed for 
+                                              detecting and reporting potential issues 
+                                              with our code while the second 
+                                              render is actually used for updating the 
+                                              user interface.
+                                 Message 2 // React takes the result of the second 
+                                              render. 
+
+      */
+
+Messages coming from the StrictMode are greyed out in the console. In React18 StrictMode
+is turned on by default and as a result React renders each component twice. StrictMode
+helps us find ImpureComponents (as we do not see the result we expect).
+
+It only behaves this way in development mode, so when we built our 
+application for production the StrictMode checks are not included and our
+components will render only once.

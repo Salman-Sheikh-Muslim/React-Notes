@@ -48,3 +48,23 @@ react-icons is essentially a package of different icon libraries.
 google: 'reat icons' you will find a website.
 
 Pick a icon you like and copy itsname
+
+________
+
+Uodating useState Array and object when treating thema as Immutatable becomes
+a liitle bit tough and complex to solve this and treat them as a regular
+JavaScript Object and  Array we can use the 'immer' library.
+
+npm install immer@9.0.19
+
+________
+
+unistall a package
+
+npm uninstall -g immer
+
+________
+
+//Shortcut for boiler template for a componet
+rafce 
+rfce
