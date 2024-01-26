@@ -1,0 +1,12 @@
+When we use axios.get(), axios sends an HTTP request to the server.
+Its a protocol for sending data over the internet.
+
+Browser >> sends an Http Request to >> Server
+Server >> sends an Http Response to >> Browser
+
+In HTTP every request and every response hs 2 section.
+
+Header and Body.
+
+Headers contain Meta Data.
+Body contain the actual data that we want.

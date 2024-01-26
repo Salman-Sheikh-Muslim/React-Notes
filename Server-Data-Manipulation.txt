@@ -1,0 +1,29 @@
+Updating Server Data:
+
+There are 2 approaches when it comes to updating data in the server.
+
+Optomistic Update 
+Pessimistic Update 
+
+Optomistic Update:
+Fast UI
+We assume the request will be a success so:
+first we update the UI and then we call the Server.
+
+Pessimistic Update:
+Slow UI
+We assume the request will be a fail so:
+first we call the Server and then we update the UI..
+
+____________________
+
+    /*
+    We have 2 options for updating.
+
+    axios.put //replaces the object
+
+    axios.patch //updating 1 or more properties of the object. 
+
+    The method we choose really depend on how the backend is built.
+    Some backends do not support the patch method they only support the'put method.
+    */

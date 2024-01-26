@@ -68,3 +68,44 @@ ________
 //Shortcut for boiler template for a componet
 rafce 
 rfce
+
+_____________
+
+React Hook Form is a popular library that lets us built complex forms
+with less code.
+
+npm install react-hook-form@7.43
+
+________________
+
+Schema Based Validation helps us defines all our validation rules in a
+single place which we call a schema.
+
+Use this if you have a complex form.
+
+Validation libraries
+
+Joi
+Yup
+Zod
+
+npm install zod@3.20.6
+
+To intregate zod with react-hook-form install:
+
+npm install @hookform/resolvers@2.9.11
+
+
+//So this library includes resolvers for various schema based validations libraries
+like zod, joi, yup and so on.
+
+____________
+
+jsonplaceholder.typicode.com
+
+The following website is a fake server or dummy backend. We can use it request 
+some data from this dummy server.
+
+To send a request to server we can use fetch() function or the axios library.
+
+npm install axios@1.3.4

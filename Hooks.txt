@@ -1,0 +1,34 @@
+All of these Hooks can only be called the top level of our component.
+We cannot call them inside loop or if statements etc.
+We can call the same Hook multiple times for different purposes.
+
+____________
+
+useState
+D:\VS Code\React-Notes\react-project\src\components\ListGroup_useState.tsx
+
+useRef
+D:\VS Code\React-Notes\react-creating-forms\src\components\Form-useRef.tsx
+
+________
+
+useEffect
+
+Usages:
+Store data in local storage
+Call the server to fetch/save data
+Manually modify the DOM
+
+With Effect Hook we can tell React to execute a piece of code after the component
+has been rendered.
+
+A piece of code that has nothing to do with returning some JSX markup instead it
+is doing some other work such as changimg the state of DOM than we say that piece
+of code has a Side Effect.
+
+When we multiple Effect hooks React will run them in order after each render.
+
+Compononete that have a piece of code that result in a side Effect are no longer
+oure componenets.
+
+Side Effects can be resolved by usinf the Effect hook; making the vomponent pure again.

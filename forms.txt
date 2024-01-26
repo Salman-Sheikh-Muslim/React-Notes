@@ -1,0 +1,13 @@
+By default when we submit an HTML Form that form is posyed to the server so
+we get a full page reload.
+
+To solve this problem we need to prevent the default behaviour.
+
+   event.preventDefault(); //prevents the form from being posted to the server.
+
+----------------
+
+React Hook Form is a popular library that lets us built complex forms
+with less code.
+
+npm install react-hook-form@7.43

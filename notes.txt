@@ -280,3 +280,109 @@ prop for each child component.
 react-managing-component-state/src/components/NavBar-SharingState.tsx
 react-managing-component-state/src/components/Cart-SharingState.tsx
 D:\VS Code\React-Notes\react-managing-component-state\src\App.tsx
+
+_____________
+
+      A input field is reffered to as a controlled component when its
+      state is entirely controlled by React. This means that the value of the input
+      field is not managed by the DOM but instead its stored and updated in the
+      components state.
+
+________
+
+React Hook Form is a popular library that lets us built complex forms
+with less code.
+
+npm install react-hook-form@7.43
+
+
+____________-
+
+Schema Based Validation helps us defines all our validation rules in a
+single place which we call a schema.
+
+Use this if you have a complex form.
+
+Validation libraries
+
+Joi
+Yup
+Zod
+
+npm install zod@3.20.6
+
+To intregate zod with react-hook-form install:
+
+npm install @hookform/resolvers@2.9.11
+
+//So this library includes resolvers for various schema based validations libraries
+like zod, joi, yup and so on.
+
+____________
+
+With Effect Hook we can tell React to execute a piece of code after the component
+has been rendered.
+
+A piece of code that has nothing to do with returning some JSX markup instead it
+is doing some other work such as changimg the state of DOM than we say that piece
+of code has a Side Effect.
+
+When we multiple Effect hooks React will run them in order after each render.
+
+Compononete that have a piece of code that result in a side Effect are no longer
+oure componenets.
+
+Side Effects can be resolved by usinf the Effect hook; making the vomponent pure again.
+
+ useEffect(() => {
+    //This is a call back function because React is going to call this function back.
+    console.log("Fetching products in " + category);
+    setProducts(["Clothing", "HouseHold"]);
+  }, [category]);
+  /*
+  The second argument is optional its called array of dependencies you can
+  properties or State variables in it. If even a single prop or variable
+  value changes or get trigged the useEffect Hook is executed.
+
+  If we pass an empty array the useEffect is only executed once.
+
+  If we do not pass the second argument than the useEffect is executed after each render.
+  If we use a useSate setFunction in useEffect hook without passing a second argument
+  a infinite loop is created because when the effect hook is triggered the setFunction
+  is exectued which in turns renders the component and due to the render the useEffect
+  Hook is executed and so on........
+  */
+
+
+  ______________
+
+  Mounting and Unmounting Components in React
+
+  In React, after components are initially rendered, they are mounted on the browser 
+screen.
+
+However, when StrictMode is enabled, React needs to re-render the components. In 
+this process, before rendering, React unmounts all the components from the browser 
+screen. Then, due to StrictMode, it re-renders the components and mounts them again
+on the browser screen.
+
+
+____________
+
+jsonplaceholder.typicode.com
+
+The following website is a fake server or dummy backend. We can use it request 
+some data from this dummy server.
+
+To send a request to server we can use fetch() function or the axios library.
+
+npm install axios@1.3.4
+
+____________
+
+Services are not about UI they are about functionality.
+
+
+______________
+
+Using Custom Hooks you can share functionality across different Components.
